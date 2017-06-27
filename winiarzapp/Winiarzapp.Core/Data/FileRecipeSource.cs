@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Xml.Serialization;
 
 namespace Winiarzapp.Core.Data
@@ -36,7 +37,7 @@ namespace Winiarzapp.Core.Data
             }
             else
             {
-                recipes = new List<Recipe>();
+                recipes = ReadInitialDataset();
             }
         }
 
@@ -51,6 +52,29 @@ namespace Winiarzapp.Core.Data
             using (var reader = new StringReader(xml))
             {
                 List<T> result = (List<T>)serializer.Deserialize(reader);
+                return result;
+            }
+        }
+
+        /// <summary>
+        /// Zwraca domyślną listę przepisów.
+        /// </summary>
+        private List<Recipe> ReadInitialDataset()
+        {
+            var assembly = Assembly.GetExecutingAssembly();
+            var resourceName = "Winiarzapp.Core.Xml.recipes.xml";
+            string xml = string.Empty;
+
+            using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+            using (StreamReader reader = new StreamReader(stream))
+            {
+                xml = reader.ReadToEnd();
+            }
+
+            XmlSerializer serializer = new XmlSerializer(typeof(List<Recipe>));
+            using (var reader = new StringReader(xml))
+            {
+                List<Recipe> result = (List<Recipe>)serializer.Deserialize(reader);
                 return result;
             }
         }

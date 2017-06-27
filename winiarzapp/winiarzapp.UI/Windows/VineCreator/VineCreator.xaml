@@ -9,7 +9,7 @@
     <Grid>
         <Label Content="Którą wielkość chcesz podać ?" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="180"/>
         <Label Content="Będziesz potrzebować:" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.259,0.524" Width="180"/>
-        <TextBox x:Name="inputAmmount" HorizontalAlignment="Left" Height="23" Margin="20,75,0,0" TextWrapping="Wrap" Text="Wpisz ilość" VerticalAlignment="Top" Width="74" KeyUp="ingredientsList_KeyUp"/>
+        <TextBox x:Name="inputAmmount" GotFocus="TextBox_GotFocus" HorizontalAlignment="Left" Height="23" Margin="20,75,0,0" TextWrapping="Wrap" Text="Wpisz ilość" VerticalAlignment="Top" Width="74" KeyUp="ingredientsList_KeyUp"/>
         <Label x:Name="unit" Content="L\Kg" HorizontalAlignment="Left" Margin="99,73,0,0" VerticalAlignment="Top"/>
         <ListView x:Name="ingredientsList" HorizontalAlignment="Left" Height="100" Margin="20,134,0,0" VerticalAlignment="Top" Width="170">
             <ListView.View>
@@ -20,8 +20,8 @@
         </ListView>
         <Label x:Name="finalDisplay"  HorizontalAlignment="Left" Margin="10,249,0,0" VerticalAlignment="Top"/>
 
-        <CheckBox x:Name="addToHistory" Content="Dodaj do historii" HorizontalAlignment="Left" Margin="20,318,0,0" VerticalAlignment="Top" Width="170" Height="27" FontSize="14" FontStyle="Italic" Checked="CheckBox_Checked" Unchecked="CheckBox_UnChecked"/>
-        <TextBox x:Name="comment"  HorizontalAlignment="Left" Height="96" Margin="10,345,0,0" TextWrapping="Wrap" Text="Tu wpisz swój komentarz." VerticalAlignment="Top" Width="240"/>
+        <CheckBox x:Name="addToHistory" Content="Dodaj do historii" HorizontalAlignment="Left" Margin="20,303,0,0" VerticalAlignment="Top" Width="170" Height="27" FontSize="14" FontStyle="Italic" Checked="CheckBox_Checked" Unchecked="CheckBox_UnChecked"/>
+        <TextBox x:Name="comment"  GotFocus="TextBox_GotFocus" HorizontalAlignment="Left" Height="96" Margin="10,330,0,0" TextWrapping="Wrap" Text="Tu wpisz swój komentarz." VerticalAlignment="Top" Width="240"/>
         <Separator HorizontalAlignment="Left" Height="100" Margin="47,174,0,0" VerticalAlignment="Top" Width="418" RenderTransformOrigin="0.5,0.5">
             <Separator.RenderTransform>
                 <TransformGroup>
@@ -32,7 +32,7 @@
                 </TransformGroup>
             </Separator.RenderTransform>
         </Separator>
-        <Button Content="Nastawiam !" HorizontalAlignment="Left" Margin="302,280,0,0" VerticalAlignment="Top" Width="150" Height="65" Click="Button_Click_Nastaw"/>
+        <Button Content="Nastawiam!" HorizontalAlignment="Left" Margin="302,280,0,0" VerticalAlignment="Top" Width="150" Height="65" Click="Button_Click_Nastaw"/>
         <ComboBox x:Name="ingredientComboBox" HorizontalAlignment="Left" Margin="20,41,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged"></ComboBox>
         <Label Content="{Binding Name}" HorizontalAlignment="Left" Margin="279,23,0,0" VerticalAlignment="Top"/>
         <TextBlock Text="{Binding Description}" HorizontalAlignment="Left" Margin="279,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="184" Width="195"/>

@@ -5,7 +5,7 @@ using Winiarzapp.Core.Data;
 namespace winiarzapp.UI.Windows.RecipeCreator
 {
     /// <summary>
-    /// Interaction logic for RecipeCreator.xaml
+    /// Okno służące do dodawania nowych przepisów.
     /// </summary>
     public partial class RecipeCreator : Window
     {
@@ -28,7 +28,7 @@ namespace winiarzapp.UI.Windows.RecipeCreator
         {
             dataGrid.Columns[0].Header = "Nazwa";
             dataGrid.Columns[1].Header = "Opis";
-            dataGrid.Columns[2].Header = "Udział (%/jednostka)";
+            dataGrid.Columns[2].Header = "Udział (%/szt)";
             dataGrid.Columns[3].Header = "Jednostka";
         }
 

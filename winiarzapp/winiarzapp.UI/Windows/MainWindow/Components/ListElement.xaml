@@ -5,8 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:winiarzapp.UI.Windows.MainWindow.Components"
              mc:Ignorable="d"
-             d:DesignHeight="50" d:DesignWidth="300" Width="298">
-  <Grid Background="DarkGray">
-    <Label x:Name="LabelListElement" Content="{}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="30" Width="278"  Background="White" MouseDoubleClick="LabelListElement_MouseDoubleClick"/>
-  </Grid>
+             Height="60" Width="280">
+    <Grid Background="DarkGray" Margin="5,5,5,5">
+        <Label x:Name="LabelListElement" Content="{}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="35" Width="255"  Background="White" MouseDoubleClick="LabelListElement_MouseDoubleClick"/>
+    </Grid>
 </UserControl>

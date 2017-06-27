@@ -7,17 +7,17 @@
              mc:Ignorable="d" d:DesignWidth="174" Height="32"
              Background="DarkGray">
     <Grid HorizontalAlignment="Center" Height="32" Margin="0,0,0.4,0" VerticalAlignment="Center" Width="174">
-        <Button BorderThickness="0" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="32" Height="32" Click="Button_Click_Help" ToolTip="Pomoc" BorderBrush="{x:Null}">
+        <Button BorderThickness="0" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="24" Click="Button_Click_Help" ToolTip="Pomoc" BorderBrush="{x:Null}" Margin="40,4,0,0">
             <Button.Background>
                 <ImageBrush ImageSource="/winiarzapp.UI;component/images/help.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
-        <Button BorderThickness="0" Content="" HorizontalAlignment="Center" VerticalAlignment="Top" Width="32" Height="32" Click="Button_Click_History" ToolTip="Historia nastawów" BorderBrush="{x:Null}">
+        <Button BorderThickness="0" Content="" HorizontalAlignment="Center" VerticalAlignment="Top" Width="30" Height="24" Click="Button_Click_History" ToolTip="Historia nastawów" BorderBrush="{x:Null}" Margin="75,4,75,0">
             <Button.Background>
                 <ImageBrush ImageSource="/winiarzapp.UI;component/images/history.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
-        <Button BorderThickness="0" Content="" HorizontalAlignment="Right" VerticalAlignment="Top" Width="32" Height="32" Click="Button_Click_Add" ToolTip="Dodaj przepis" BorderBrush="{x:Null}">
+        <Button BorderThickness="0" Content="" HorizontalAlignment="Right" VerticalAlignment="Top" Width="30" Height="24" Click="Button_Click_Add" ToolTip="Dodaj przepis" BorderBrush="{x:Null}" Margin="0,4,40,0">
             <Button.Background>
                 <ImageBrush ImageSource="/winiarzapp.UI;component/images/add.png" Stretch="Uniform"/>
             </Button.Background>

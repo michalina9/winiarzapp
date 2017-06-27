@@ -61,7 +61,7 @@ namespace winiarzapp.UI.Windows.MainWindow.Components
                     stackPanel.Children.Add(listElement);
                 }
             }
-            stackPanel.Height = stackPanel.Children.Count * 50;
+            stackPanel.Height = stackPanel.Children.Count * 65;
         }
     }
 }

@@ -12,7 +12,8 @@ namespace Winiarzapp.Core.Data
     {
 
         public Recipe() { }
-
+        
+        // Implementacja interfejsu INotifyPropertyChanged.
         public event PropertyChangedEventHandler PropertyChanged;
         private void NotifyPropertyChanged(string name)
         {
@@ -62,7 +63,7 @@ namespace Winiarzapp.Core.Data
             }
         }
         public Guid UniqueID { get; set; }
-
+        
         public Recipe(Ingredient[] ingredients, string name, string description)
         {
             UniqueID = Guid.NewGuid();
@@ -72,7 +73,10 @@ namespace Winiarzapp.Core.Data
             if (!ValidateIngredients(ingredients)) throw new Exception("Proporcje składników nie sumują się do 1.0.");
             this.Ingredients = new List<Ingredient>(ingredients);
         }
-
+        
+        /// <summary>
+        /// Implementacja interfejsu IComparable 
+        /// </summary>
         public int CompareTo(object obj)
         {
             if (obj as Recipe != null)
@@ -82,7 +86,10 @@ namespace Winiarzapp.Core.Data
             }
             return -1;
         }
-
+        
+        /// <summary>
+        /// Metoda sprawdzająca proporcje składników.
+        /// </summary>
         public bool ValidateIngredients(Ingredient[] ingredients)
         {
             double sum = 0.0;
@@ -94,7 +101,10 @@ namespace Winiarzapp.Core.Data
             if (sum == 1.0) return true;
             return false;
         }
-
+        
+        /// <summary>
+        /// Metoda sprawdzająca równoważność dwóch obiektów przepisów.
+        /// </summary>
         public bool Equals(Recipe x, Recipe y)
         {
             return x.UniqueID == y.UniqueID;
@@ -104,7 +114,10 @@ namespace Winiarzapp.Core.Data
         {
             return 0;
         }
-
+        
+        /// <summary>
+        /// Metoda wyszukiwania poprzez frazę.
+        /// </summary>
         public bool SearchByPhrase(string searchPhrase)
         {
             bool searchIngredients = false;
@@ -121,7 +134,10 @@ namespace Winiarzapp.Core.Data
                 || this.Description.Contains(searchPhrase)
                     || searchIngredients;
         }
-
+        
+        /// <summary>
+        /// Metoda wyszukiwania poprzez wyrażenia regularne.
+        /// </summary>
         public bool SearchByRegex(string regexPattern)
         {
             System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex(regexPattern);

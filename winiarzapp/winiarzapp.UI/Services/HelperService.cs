@@ -38,14 +38,19 @@ namespace Winiarzapp.UI.Services
             h.Initialize(recipeHistory);
             h.ShowDialog();
         }
-
+        /// <summary>
+        /// Wyśweitl kreator przepisów
+        /// </summary>
         public static void ShowRecipeCreator() //metoda wyświetlająca kreator przepisów
         {
             RecipeCreator rc = new RecipeCreator();
             rc.Initialize(recipeSource);
             rc.ShowDialog();
         }
-
+        /// <summary>
+        /// wyświetl kreator win
+        /// </summary>
+        /// <param name="recipe"></param>
         public static void ShowVineCreator(Recipe recipe) //metoda wyświetlająca kreator wina
         {
             VineCreator vc = new VineCreator(recipe, recipeHistory);
